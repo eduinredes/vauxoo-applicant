@@ -19,6 +19,7 @@ CREATE TABLE employee (
 	first_name varchar(50) not null,
 	last_name varchar(50) not null,
 	id_department integer not null,
+	id_boss integer not null,
 	primary key(id),
 	foreign key(id_department) references employee_department(id)
 );
@@ -34,11 +35,11 @@ insert into employee_department (id, name, description) values
 	(6, 'Departamento de investigación', 'Dedicado al desarrollo e integración de tecnologías emergentes');
 
 /*employee*/
-insert into employee (id, first_name, last_name, id_department) values 
-	(1, 'Eduin', 'López', 1),
- 	(2, 'José', 'Paz', 2),
-	(3, 'Julia', 'Gutierrez', 3),
-	(4, 'William', 'Ruth', 4);
+insert into employee (id, first_name, last_name, id_department, id_boss ) values 
+	(1, 'Eduin', 'López', 1, 2),
+ 	(2, 'José', 'Paz', 2, 3),
+	(3, 'Julia', 'Gutierrez', 3, 2),
+	(4, 'William', 'Ruth', 4,2);
 
 /*creacion de las tablas*/
 CREATE TABLE employee_hobby (
@@ -60,19 +61,17 @@ CREATE TABLE employees_and_hobbies (
 insert into employee_hobby (id, name, description) values
  	(1, 'Natación', 'Deporte acuático'),
 	(2, 'Dibujo Tradicional', 'Recreación de escenarios mediante trazos usando herramientas tradicionales'),
-	(3, 'Cuatrista', 'Practicante dle folklore venezolano usando el Cuatro como instrumento'),
- 	(4, 'Paracaidista', 'Deporte extremo que consiste en el salto de personas desde aeronaves usando paracaidas');
+	(3, 'Cuatrista', 'Practicante dle folklore venezolano usando el Cuatro como instrumento');
 
 /*employees_and_hobbies*/
 insert into employees_and_hobbies (id_employee, id_hobby) values 
 	(1, 2),
  	(1, 1),
  	(2, 3),
- 	(2, 4),
+ 	(2, 2),
  	(3, 2),
-	(3, 4),
+	(3, 3),
 	(4, 1),
-	(4, 4);
-
+	(4, 3);
 
 -- ...
