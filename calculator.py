@@ -1,16 +1,31 @@
 """
-Your module documentation here
+Module designed for Vauxoo technical test
+
+Classes:
+    CalculatorClass: class designed to operate with numbers
+
 """
 
 
 class CalculatorClass(object):
     """
-    Your class documentation here
+    Class to perform numerical calculations
     """
 
     def sum(self, num_list):
         """
-        Your method documentation here
+        Method that sums all the elements of a given array
+
+        Args:
+            num_list (list of int): list of numbers to add together
+
+        Returns:
+            The total for adding the given list of numbers
         """
-        # your sum code here
-        return "not implement yet"  # Remove this dummy line
+
+        sum_total = 0
+
+        for num in num_list:
+            sum_total += num
+
+        return sum_total
